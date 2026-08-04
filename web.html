@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="ZXX">
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital@1&display=swap');
+            
+body{
+    margin: 0;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #f3f2f1;
+}
+*:not(i){
+    font-family: "Great Vibes", cursive;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+:before,:after{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+#rc-logo {
+  position: absolute; /* Absolute positioning to place it anywhere on the page */
+  top: 20px; /* Slightly down from the top */
+  left: 20px; /* Slightly right from the left */
+  font-size: 25px; /* Decrease the font size to make it a logo */
+  font-weight: bold; /* Bold text for emphasis */
+  color: #fdfdfd; /* Adjust to a gold color or choose your desired logo color */
+  opacity: 0; /* Initially invisible */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  animation: slideIn 1s forwards; /* Apply the animation */
+  letter-spacing: 2px; /* Optional: Add spacing between letters */
+  text-transform: uppercase; /* Optional: Make the text uppercase for the logo */
+  font-family: 'Arial', sans-serif; /* A clean sans-serif font */
+}
+
+/* Keyframe for sliding in from the left */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); /* Start off-screen */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* End up at normal position */
+    opacity: 1; /* Make it visible */
+  }
+}
+
+
+header,
+section,
+footer{
+    display: block;
+    width: 100%;
+}
+.countdown-timer {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.countdown-timer h3 {
+    font-size: 24px;
+    color: goldenrod;
+    margin-bottom: 10px;
+}
+
+#timer {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-content-between{
+    justify-content: space-between;
+
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-items-center{
+    align-items: center;
+
+}
+.section-title{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2{
+    font-size: 45px;
+    color: black;
+    font-weight: 700;
+    font-family: "Great Vibes", cursive;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: capitalize;
+}
+.btn-1{
+    padding: 10px 35px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.5s ease;
+    font-weight: 500;
+}
+.btn-1:focus{
+    outline: none;
+}
+.btn-1:hover{
+    background-color: transparent;
+}
+.header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header .nav{
+    
+    padding: 0 15px;
+    margin-left: 250px;
+}
+.header .nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 30px;
+}
+.header .nav ul li a{
+    display: block;
+    padding: 25px 0; 
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+.home-section{
+  min-height: 100vh;
+  position: relative;
+}
+.home-section .slide{
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+.home-section .slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+.home-section .slide:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+.home-section .row{
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
+.home-section .home-content{
+    flex:0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    margin-top: 80px;
+
+}
+.btn-1:hover,
+.people-section .people-item-inner .social-icons a i,
+.event-section .event-item-inner span,
+.story-section .story-item i,
+.couple-section .social-icons a i,
+.couple-section .couple i.fa-heart,
+.couple-section .couple h3,
+.story-section .story-text h3,
+.header .nav ul li a.active,
+.header .nav ul li a:hover{
+    color:goldenrod;
+
+}
+.home-section .home-content p{
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0 0 15px;
+
+}
+.home-section .slide.active .home-content p{
+    opacity: 0;
+animation: fadeInTop 1s ease forwards;
+}
+@keyframes fadeInTop{
+    0%{
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.home-section .home-content h1{
+    font-size: 80px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: normal;
+    font-family: "Great Vibes", cursive;
+}
+.home-section .slide.active .home-content h1{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 0.5s;
+}
+.home-section .home-content span{
+    font-size: 20px;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 30px ;
+    color: white;
+    padding: 7px 30px;
+    margin: 15px 0 0;
+}
+.home-section .slide.active .home-content span{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 1s;
+}
+.couple-section{
+    padding: 80px 0 80px;
+}
+
+.couple-section .couple{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 60px;
+    text-align: center;
+    position: relative;
+}
+.couple-section .couple:nth-child(2):before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #cccccc;
+
+}
+.couple-section .couple i.fa-heart{
+    position: absolute;
+    left: -15px;
+    width: 31px;
+    padding: 5px;
+    background-color: #f3f2f1;
+    text-align: center;
+    font-size: 18px;
+    top: 30%;
+
+}
+.couple-section .couple img{
+    max-width: 280px;
+    width: 100%;
+    border-radius: 50%;
+    border: 10px solid transparent;
+}
+.couple-section .couple h3{
+    font-size: 40px;
+    margin: 15px 0;
+    font-family: "Great Vibes", cursive;
+    font-weight: normal;
+    letter-spacing: 2px;
+
+}
+.couple-section .couple p{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 26px;
+    color: #555555;
+    margin: 0;
+}
+.couple-section .social-icons{
+   
+    padding-top: 30px;
+
+}
+.couple-section .social-icons a {
+    display: inline-block;
+    margin: 0 3px;
+}
+.btn-1,
+.people-section .people-item-inner .social-icons a i,
+.event-section .event-item-inner:before,
+.couple-section .social-icons a i,
+.couple-section .couple img{
+    border-color: rgb(240, 212, 147);
+}
+.btn-1,
+.rsvp-section,
+.people-section .people-item-inner .social-icons a:hover i,
+.people-section .filter-btn.active,
+.event-section,
+.couple-section .social-icons a:hover i{
+    background-color:rgb(240, 212, 147);
+}
+.couple-section .social-icons a i{
+    height: 32px;
+    width: 32px;
+    border: 1px solid transparent;
+    line-height: 30px;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+.couple-section .social-icons a:hover i{
+    color: #f3f2f1;
+
+}
+/*story Section*/
+.story-section{
+    padding:80px 0 80px;
+}
+.story-section .story-content{
+    flex:0 0 100%;
+    max-width: 100%;
+    position: relative;
+}
+.story-section .story-content:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    background-color: #cccccc;
+}
+.story-section .story-item i{
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    top:5px;
+    width: 31px;
+    text-align: center;
+    background-color:#f3f2f1;
+    padding: 5px;
+    font-size: 18px;
+    
+}
+.story-section .story-item{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+    
+}
+.story-section .story-item:last-child{
+    margin-bottom: 0;
+}
+.story-section .story-item:nth-child(even){
+    flex-direction: row-reverse;
+}
+.story-section .story-item:nth-child(odd) .story-text{
+    
+    padding: 0 60px 0 15px;
+    text-align: right;
+}
+.story-section .story-item:nth-child(odd) .story-img{
+    padding: 0 15px 0 60px;
+}
+.story-section .story-item:nth-child(even) .story-text{
+    padding: 0 15px 0 60px;
+}
+.story-section .story-item:nth-child(even) .story-img{
+    padding: 0 60px 0 15px; ;
+}
+.story-section .story-text,
+.story-section .story-img{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.story-section .story-text h3{
+    font-size: 24px;
+    margin: 0 0 8px;
+    color:goldenrod ;
+    font-weight: 500;
+    
+}
+.story-section .story-text span.date{
+    font-size: 15px;
+    font-weight: 500;
+    color: #555555;
+    margin: 15px 0;
+    display: block;
+    text-transform: capitalize;
+}
+.story-section .story-text p{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 26px;
+    margin: 0;
+    color: #555555;
+}
+.event-section{
+    padding: 80px 0 130px;
+
+
+}
+.event-section .section-title h2{
+    color:#111;
+
+}
+.event-section .event-item{
+    flex: 0 0 33.3%;
+    max-width :33.33%;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.event-section .event-item:nth-child(2)
+{
+    transform: translateY(50px);
+}
+.event-section .event-item-inner{
+    background-color: #ffffff;
+    padding:60px 45px 100px;
+    text-align: center;
+    box-shadow: 0 0 10px #888;
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+}
+.event-section .event-item-inner:before{
+    content:'';
+    position: absolute;
+    left:15px;
+    top:15px;
+    right:15px;
+    bottom:15px;
+    border:3px solid rgb(242, 215, 153);
+   
+    
+
+}
+.event-section .event-item-inner h3{
+color: #000;
+font-weight: 500;
+font-size: 24px;
+margin: 0 0 15px;
+text-transform: capitalize;
+border-bottom: 1px solid #ccc;
+padding-bottom: 5px;
+display: inline-block;
+
+}
+.event-section .event-item-inner span{
+    display:block;
+    font-weight: 500;
+    font-size: 16px;
+
+
+}
+.event-section .event-item-inner span.time{
+    margin-bottom: 15px;
+
+}
+.event-section .event-item-inner p{
+font-size: 16px;
+font-family: 'Times New Roman', Times, serif;
+line-height: 26px;
+color: #555555;
+margin: 0;
+}
+.event-section .event-item-inner img{
+    position: absolute;
+    width: 100px;
+    left:50%;
+    bottom: 22px;
+    margin-left: -36px;
+}
+
+.people-section{
+    padding:80px 0 0;
+
+}
+.people-section .people-filter{
+    
+    padding:0 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+.people-section .filter-btn{
+background-color: rgb(242, 215, 153);
+color:grey;
+padding: 7px 15px;
+display: inline-block;
+margin: 0 3px;
+font-size: 16px;
+margin-bottom: 10px;
+text-decoration: none;
+
+}
+.people-section .filter-btn.active{
+    color: #ffffff;
+}
+.people-section .people-item{
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 15px;
+    margin-top: 25px;
+    
+}
+.people-section .people-item-inner{
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+}
+.people-section .people-item-inner img{
+    width: 100%;
+    box-shadow: 0 0 10px #cccccc;
+    margin-top: -40px;
+    transition: all 0.5s ease;
+}
+.people-section .people-item-inner:hover  img{
+    transform: scale(0.95);
+}
+.people-section .people-item-inner h4{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    margin: 20px 0 5px;
+    text-transform: capitalize;
+}
+.people-section .people-item-inner p{
+    color: #555555;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+.people-section .people-item-inner .social-icons{
+    text-align: center;
+    padding:10px 0;
+
+}
+.people-section .people-item-inner .social-icons a{
+    display: inline-block;
+    margin: 0 3px;
+    text-decoration: none;
+}
+.people-section .people-item-inner .social-icons a i{
+    height: 32px;
+    width: 32px;
+    border: 1px solid rgb(240, 212, 147);
+    display: block;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+
+}
+.people-section .people-item-inner .social-icons a:hover i{
+    color: #ffffff;
+
+}
+.gallery-section 
+{
+    padding: 80px 0 80px;
+
+}
+.gallery-section .gallery-item{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+}
+.gallery-section .gallery-item-inner{
+    overflow: hidden;
+    cursor: pointer;
+}
+.gallery-section .gallery-item-inner img{
+    width: 100%;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+.gallery-section .gallery-item-inner:hover img{
+    transform: scale(0.95);
+}
+.rsvp-section{
+    padding: 80px 0 80px;
+}
+.rsvp-section .section-title h2,
+.rsvp-section .section-title p{
+    color:black;
+}
+.rsvp-section .section-title p{
+    margin: 10px 0 0;
+    font-size: 16px;
+    line-height: 26px;
+}
+.rsvp-section .rsvp-form{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.rsvp-section .form{
+    max-width: 600px;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 60px 25px;
+    box-shadow: 0 0 10px #888888;
+}
+.rsvp-section .form .input-group{
+   
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+.rsvp-section .form .input-group.w50{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.rsvp-section .form .input-control{
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: #000;
+    padding: 6px 12px;
+    border: 1px solid #cccccc;
+}
+.rsvp-section .form textarea.input-control{
+    height: 120px;
+    padding-top:12px ;
+    resize: none;
+}
+.rsvp-section .form .input-control:focus{
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+.hamburger-btn {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    z-index: 100;
+}
+.header .nav {
+    transition: all 0.3s ease;
+}
+@media (max-width: 991px) {
+    .hamburger-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 101;
+    }
+    .header .nav {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 100%;
+        left: 0;
+        z-index: 99;
+        margin-left: 0;
+        padding: 15px 0;
+    }
+    .header .nav.active {
+        display: block;
+    }
+    .header .nav ul li {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+    .header .nav ul li a {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .home-section .home-content h1 {
+        font-size: 60px;
+    }
+    .event-section .event-item,
+    .people-section .people-item,
+    .gallery-section .gallery-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .event-section .event-item:nth-child(2) {
+        transform: translateY(0);
+    }
+}
+@media (max-width: 767px) {
+    .home-section .home-content h1 {
+        font-size: 45px;
+    }
+    .header .nav ul li {
+        display: block;
+        margin-left: 0;
+    }
+    .header .nav ul li a {
+        padding: 10px 0;
+    }
+    #rc-logo {
+        position: relative;
+        text-align: center;
+        top: 0;
+        left: 0;
+    }
+    .couple-section .couple,
+    .story-section .story-text,
+    .story-section .story-img,
+    .event-section .event-item,
+    .people-section .people-item,
+    .gallery-section .gallery-item,
+    .rsvp-section .form .input-group.w50 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .couple-section .couple:nth-child(2):before,
+    .story-section .story-content:before,
+    .story-section .story-item i {
+        display: none;
+    }
+    .couple-section .couple i.fa-heart {
+        display: none;
+    }
+    .story-section .story-item:nth-child(odd) .story-text,
+    .story-section .story-item:nth-child(even) .story-text,
+    .story-section .story-item:nth-child(odd) .story-img,
+    .story-section .story-item:nth-child(even) .story-img {
+        padding: 0 15px;
+        text-align: center;
+    }
+    .couple-section .couple {
+        margin-bottom: 30px;
+    }
+}
+        </style>
+        <meta charset="utf8">
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+
+        
+    </head>
+    <body>
+        <header class="header">
+            <div class="countdown-timer">
+                <h3>Time Left for the Event:</h3>
+                <div id="timer">
+                    <span id="days">00</span>d : 
+                    <span id="hours">00</span>h : 
+                    <span id="minutes">00</span>m : 
+                    <span id="seconds">00</span>s
+                </div>
+            </div>
+            <div id="rc-logo" class="rc-animation">
+                <h2>R&C</h2>
+              </div>
+              
+              
+            
+            
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    
+                    <div class="hamburger-btn" id="hamburger-btn">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <div class="nav" id="nav-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#couple">Couple</a></li>
+                            <li><a href="#story">Story</a></li>
+                            <li><a href="#events">Events</a></li>
+                            <li><a href="#people">People</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#RSVP">RSVP</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+<section class="home-section">
+    <div class="slide active" style="background-image: url('background img1.jpg');">
+        <div class="container">
+    <div class="row align-items-center" >
+        <div class="home-content">
+            <p>We Are Getting Married</p>
+            <h1>Elijah & Hayley</h1>
+            <span>25 April 2025</span>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="slide " style="background-image: url('slide2.jpg');">
+        <div class="container">
+    <div class="row align-items-center" >
+        <div class="home-content">
+            <p>We Are Getting Married</p>
+            <h1>Elijah & Hayley</h1>
+            <span>25 April 2025</span>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="slide" style="background-image: url('slide3.jpg');">
+        <div class="container">
+    <div class="row align-items-center" >
+        <div class="home-content">
+            <p>We Are Getting Married</p>
+            <h1>Elijah & Hayley</h1>
+            <span>25 April 2025</span>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+</section>
+<section class="couple-section">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Happy Couple</h2>
+            </div>
+        </div>
+        <div class="row" id="couple">
+            <div class="couple" >
+                <img src="groom1.jpg" alt="happy couple">
+                <h3>Elijah</h3>
+                <p>Dear Family and Friends,
+                    Excited to embark on marriage with Hayley. You're my light, laughter, and love.
+                     Grateful for your unwavering support. 
+                     Together, we'll cherish every moment, face challenges, and grow stronger. 
+                     Here's to endless adventures and a love that deepens with time.</p>
+                     <div class="social-icons">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                     </div>
+            </div>
+            <div class="couple" >
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <img src="hayley.jpg" alt="happy couple">
+                <h3>Hayley</h3>
+                <p>Dear Family and Friends,
+                    Excited to embark on marriage with Elijah. You're my light, laughter, and love.
+                     Grateful for your unwavering support. 
+                     Together, we'll cherish every moment, face challenges, and grow stronger. 
+                     Here's to endless adventures and a love that deepens with time.</p>
+                     <div class="social-icons">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                     </div>
+                    </div>
+        </div>
+    </div>
+    
+
+</section>
+<section class="story-section" id="story">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Our Love Story</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="story-content">
+                <div class="row">
+                    <div class="story-item">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <div class="story-text">
+                            <h3>First Meet</h3>
+                            <span class="date">14 March 2022</span>
+                            <p>You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.
+                                You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.</p>
+                        </div>
+                        <div class="story-img">
+                            <img src="m1.jpg" alt="couple love story">
+                        </div>
+                    </div>
+                    <div class="story-item">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <div class="story-text">
+                            <h3>First Date</h3>
+                            <span class="date">20 April 2022</span>
+                            <p>You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.
+                                You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.</p>
+                        </div>
+                        <div class="story-img">
+                            <img src="first date.jpg" alt="couple love story">
+                        </div>
+                    </div>
+                    <div class="story-item">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <div class="story-text">
+                            <h3>Proposal</h3>
+                            <span class="date">20 April 2022</span>
+                            <p>You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.
+                                You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.</p>
+                        </div>
+                        <div class="story-img">
+                            <img src="proposal.jpg" alt="couple love story">
+                        </div>
+                    </div>
+                    <div class="story-item">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <div class="story-text">
+                            <h3>Engagement</h3>
+                            <span class="date">17 May 2022</span>
+                            <p>You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.
+                                You're my light, laughter, and love. 
+                                Grateful for your unwavering support. 
+                                Together, we'll cherish every moment, face challenges, and grow stronger. 
+                                Here's to endless adventures and a love that deepens with time.</p>
+                        </div>
+                        <div class="story-img">
+                            <img src="e1.jpg" alt="couple love story">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--event section start-->
+<section class ="event-section" id="events">
+    <div class ="container">
+        <div class ="row">
+            <div class = "section-title">
+                <h2> Celebrate Our Love</h2>
+            </div>
+        </div>
+        <div class = "row justify-content-center">
+            <div class ="event-item">
+                <div class = "event-item-inner">
+                    <h3>Ceremony</h3>
+                    <span class = "date">16 Sep 2023</span>
+                    <span class = "time"> 5:00 - 7:00 PM</span>
+                    <p> R&P Conventional Hall</p>
+                    <p>Electronic City, Banglore, Karnataka,India</p>
+                    <img src="bouquet.jpg" alt="event">
+
+                </div>
+            </div>
+            <div class ="event-item">
+                <div class = "event-item-inner">
+                    <h3>Reception</h3>
+                    <span class = "date">19 Sep 2023</span>
+                    <span class = "time"> 5:00 - 7:00 PM</span>
+                    <p> R&P Conventional Hall</p>
+                    <p>Electronic City, Banglore, Karnataka,India</p>
+                    <img src="bouquet.jpg" alt="event">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<!--event section end-->
+<!--people section-->
+<section class ="people-section" id="people">
+    <div class ="container">
+        <div class = "row">
+            <div class = "section-title">
+                <h2>Peoples</h2>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "people-filter">
+                <a href = "javascript:void(0);"  data-target = "groomsmen" class ="filter-btn active">Groomsmen</a>
+                <a href = "javascript:void(0);"  data-target = "Bridesmaid" class ="filter-btn ">Bridesmaid</a>
+                
+            </div>
+        </div>
+        <!--grroms-->
+        <div class ="row">
+            <div class ="people-item" data-category="groomsmen">
+                <div class = "people-item-inner">
+                    <img src = "g1.jpg" alt="groomsmen">
+                    <h4>Ravi</h4>
+                    <p>Best Friend</p>
+                    <div class="social-icons">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                     </div>
+
+                </div>
+            </div>
+            <div class ="people-item" data-category="groomsmen">
+                <div class = "people-item-inner">
+                    <img src = "g2.jpg" alt="groomsmen">
+                    <h4>Jhon</h4>
+                    <p>Best Friend</p>
+                    <div class="social-icons">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                     </div>
+
+                </div>
+            </div>
+            <div class ="people-item" data-category="groomsmen">
+                <div class = "people-item-inner">
+                    <img src = "g3.jpeg" alt="groomsmen">
+                    <h4>James</h4>
+                    <p>Friend</p>
+                    <div class="social-icons">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                     </div>
+
+                </div>
+            </div>
+            <div class ="people-item" data-category="groomsmen">
+                <div class = "people-item-inner">
+                    <img src = "g4.jpg" alt="groomsmen">
+                    <h4>Rahul</h4>
+                    <p>Friend</p>
+                    <div class="social-icons">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                     </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <!--grrom end-->
+        <!--bridesmaid start-->
+        <div class ="row">
+            
+            <div class ="people-item" data-category="bridesmaid">
+                <div class = "people-item-inner">
+                    <img src = "b4.jpg" alt="groomsmen">
+                    <h4>Roshni</h4>
+                    <p>Best Friend</p>
+                    <div class="social-icons">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" title="linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                     </div>
+
+                </div>
+        </div>
+        <div class ="people-item" data-category="bridesmaid">
+            <div class = "people-item-inner">
+                <img src = "b3.jpg" alt="groomsmen">
+                <h4>Alia</h4>
+                <p>Best Friend</p>
+                <div class="social-icons">
+                    <a href="#" title="facebook">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" title="twitter">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#" title="instagram">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" title="linkedin">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                 </div>
+
+            </div>
+    </div>
+    <div class ="people-item" data-category="bridesmaid">
+        <div class = "people-item-inner">
+            <img src = "b2.png" alt="groomsmen">
+            <h4>Rina</h4>
+            <p>Friend</p>
+            <div class="social-icons">
+                <a href="#" title="facebook">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#" title="twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+
+                <a href="#" title="instagram">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" title="linkedin">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+             </div>
+
+        </div>
+</div>
+<div class ="people-item" data-category="bridesmaid">
+    <div class = "people-item-inner">
+        <img src = "b1.jpeg" alt="groomsmen">
+        <h4>Devi</h4>
+        <p>Friend</p>
+        <div class="social-icons">
+            <a href="#" title="facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#" title="twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+
+            <a href="#" title="instagram">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" title="linkedin">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+         </div>
+
+    </div>
+</div>
+        <!--bridesmaidend-->
+    </div>
+    
+
+</section>
+<section class="gallery-section">
+    <div class="container" id="gallery">
+        <div class="row">
+            <div class="section-title">
+                <h2>Our Memories</h2>
+            </div>
+            <div class="row">
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <img src="c22.jpg" alt="couple gallery">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <img src="c33.jpg" alt="couple gallery">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <img src="c44.jpg" alt="couple gallery">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <img src="c55.jpg" alt="couple gallery">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <img src="c66.jpg" alt="couple gallery">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <img src="c77.jpg" alt="couple gallery">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="rsvp-section">
+    <div class="container" id="RSVP">
+        <div class="row" id="RSVP">
+            <div class="section-title">
+                <h2>You Are Invited</h2>
+                <p>Please kindly respond before 03 sep 2024</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="rsvp-form">
+                <form class="form">
+                    <div class="row">
+                        <div class="input-group w50">
+                            <input type="text" placeholder="Name" class="input-control">
+                        </div>
+                        <div class="input-group w50">
+                            <input type="text" placeholder="Email" class="input-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <select class="input-control">
+                                <option value="">Number of Guests</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <select class="input-control">
+                                <option value="I am attending">I am attending</option>
+                                <option value="I am not attending">I am not attending</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <textarea placeholder="Message" class="input-control">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                    <button type="submit" class="btn-1"><a href="web.html">Send</a></button>
+                </div>
+            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="jquery.min.js"></script>
+<script src="main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburgerBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    });
+</script>
+
+
+
+
+    </body>
+</html>
