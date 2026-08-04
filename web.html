@@ -1387,17 +1387,19 @@ text-decoration: none;
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const navMenu = document.getElementById('nav-menu');
         
-        hamburgerBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking a link
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+        if (hamburgerBtn && navMenu) {
+            hamburgerBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
             });
-        });
+            
+            // Close menu when clicking a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
     });
 </script>
 
